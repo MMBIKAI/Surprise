@@ -5,38 +5,107 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+  text-align: center;
+  padding-top: 40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.picture_container img {
+  width: 250px;
+  border-radius: 20px;
+}
+
+/* Buttons container: horizontal alignment */
+.buttons_container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* vertical align center */
+  gap: 20px; /* space between buttons */
+  height: 150px; /* extra space for NO movement */
+  position: relative;
+}
+
+button {
+  padding: 15px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* YES button wrapper */
+.yes_wrapper {
+  position: relative;
+}
+
+/* YES button itself */
+.yes_btn {
+  background: hotpink;
+  color: white;
+  transform-origin: center;
+}
+
+/* NO button wrapper for moving */
+.no_wrapper {
+  position: relative; /* relative so translate works without stacking */
+}
+
+/* NO button */
+.no_btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 40px;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+/* Romantic message */
+.love_message {
+  margin-top: 40px;
+  font-size: 30px;
+  color: hotpink;
+  font-weight: bold;
+  animation: pop 1.5s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
-  to {
-    transform: rotate(360deg);
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .buttons_container {
+    height: 200px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .picture_container img {
+    width: 180px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .love_message {
+    font-size: 22px;
+  }
 }
